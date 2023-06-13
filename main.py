@@ -13,6 +13,6 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-print('This is the initial commit')
+print('This is the second commit')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
