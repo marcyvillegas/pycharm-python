@@ -1,18 +1,19 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import collections
+Card = collections.namedtuple('Card', ['rank', 'suit'])
 
+class FrenchDeck:
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+    suits = 'spades diamonds clubs hearts'.split()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    def __init__(self):
+        self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
 
+    def __len__(self):
+        return len(self._cards)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+    def __getitem__(self, position):
+        return self._cards[position]
 
-print('This is the second commit')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+deck = FrenchDeck()
+print(len(deck))
