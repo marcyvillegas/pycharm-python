@@ -17,3 +17,9 @@ class FrenchDeck:
 
 deck = FrenchDeck()
 print(len(deck))
+
+# -- TYPE HINTS --
+def greet(firstName: str, lastName: str):
+    return f"Hello {firstName.capitalize()} {lastName.capitalize()}"
+
+print(greet("marcy", "villegas"))
